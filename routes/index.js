@@ -8,7 +8,11 @@ var {
   doRegister,
   doLogin,
   getMyOrder,
-  getlogout
+  addtocart,
+  buyNow,
+  getlogout,
+  checkOut,
+  payVerify
 } = require('../controllers/userController')
 
 /* GET home page. */
@@ -16,11 +20,14 @@ router.get('/', getHomePage);
 /* GET LOGIN PAGE. */
 router.get('/login', getLoginPage);
 /* GET REGISTER PAGE. */
-router.get('/logout',getlogout);
 router.get('/registers', getRegisterPage);
 router.get('/myOrder',checkUser,getMyOrder);
 router.post('/register', doRegister);
 router.post('/login', doLogin);
-
+router.get('/addtoCart/:pid',addtocart);
+router.get('/buynow/:id',buyNow);
+router.get('/checkout/:price/:id',checkOut)
+router.post('/verify',payVerify);
+router.get('/logout',getlogout);
 
 module.exports = router;

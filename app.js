@@ -12,7 +12,7 @@ var usersRouter = require('./routes/users');
 var adminRouter = require('./routes/admin');
 
 var app = express();
-
+var Razorpay = require('./Payments/Razorpay');
 // view engine setup
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'hbs');
